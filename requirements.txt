@@ -1,7 +1,13 @@
 pandas
+numpy
 scikit-learn
 rank_bm25
 sentence-transformers
 faiss-cpu
-Sastrawi
+PySastrawi
 streamlit
+matplotlib
+seaborn
+nltk
+tqdm
+ipywidgets

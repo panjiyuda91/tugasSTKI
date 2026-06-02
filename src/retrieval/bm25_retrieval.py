@@ -1,4 +1,4 @@
-from src.preprocessing import build_stemmed_text, tokenize
+from retrieval.preprocessing import build_stemmed_text, tokenize
 
 def retrieve_bm25(query, bm25, df, top_k=10):
     query_stemmed = build_stemmed_text(query)

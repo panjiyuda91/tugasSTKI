@@ -1,5 +1,5 @@
 import numpy as np
-from src.preprocessing import build_clean_text
+from retrieval.preprocessing import build_clean_text
 
 def retrieve_dense(query, model, faiss_index, df, top_k=10):
     # Kueri HANYA dibersihkan tanda bacanya, tanpa stemming
