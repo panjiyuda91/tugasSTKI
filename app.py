@@ -57,6 +57,9 @@ def load_resources():
 
 with st.spinner("⏳ Memuat index dan model..."):
     df, retriever = load_resources()
+    
+def set_query(q):
+    st.session_state.search_query = q
 
 # ──────────────────────────────────────────────────────────────
 # UI: LAYOUT & INPUT
@@ -71,6 +74,7 @@ with col_search:
     query = st.text_input(
         "🔍 Cari destinasi wisata...",
         placeholder="Contoh: pantai untuk snorkeling, wisata alam menenangkan...",
+        key="search_query"
     )
 
 with col_config:
@@ -165,6 +169,7 @@ else:
     ]
     cols = st.columns(len(example_queries))
     for col, eq in zip(cols, example_queries):
-        if col.button(eq, use_container_width=True):
-            # Trick Streamlit: Jika tombol diklik, isi session state agar query jalan
-            pass
+        col.button(eq, use_container_width=True, on_click=set_query, args=(eq,))
+        # if col.button(eq, use_container_width=True):
+        #     # Trick Streamlit: Jika tombol diklik, isi session state agar query jalan
+            
